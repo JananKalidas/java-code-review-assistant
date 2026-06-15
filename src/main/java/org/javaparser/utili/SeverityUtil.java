@@ -10,7 +10,7 @@ public class SeverityUtil {
             int max_threshold
     ){
         if(actualValue > min_threshold && actualValue <= max_threshold) return Severity.WARNING;
-        else if(actualValue > max_threshold) return Severity.CRITICIAL;
+        else if(actualValue > max_threshold) return Severity.CRITICAL;
         else return Severity.INFO;
     }
 }

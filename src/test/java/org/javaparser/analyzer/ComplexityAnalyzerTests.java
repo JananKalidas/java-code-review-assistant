@@ -2,7 +2,7 @@ package org.javaparser.analyzer;
 
 import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
-import org.javaparser.models.Findings;
+import org.javaparser.models.StaticFindings;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -50,7 +50,7 @@ public class ComplexityAnalyzerTests {
         CompilationUnit cu =
                 StaticJavaParser.parse(code);
 
-        List<Findings> findings =
+        List<StaticFindings> findings =
                 analyzer.analyze(cu);
 
         assertFalse(findings.isEmpty());
