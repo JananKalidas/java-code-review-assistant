@@ -1,10 +1,9 @@
-package org.javaparser.reviewengine;
+package org.javaparser.staticreview;
 
 import com.github.javaparser.ast.CompilationUnit;
 import lombok.RequiredArgsConstructor;
 import org.javaparser.analyzer.Analyzer;
-import org.javaparser.models.Findings;
-import org.springframework.context.annotation.Bean;
+import org.javaparser.models.StaticFindings;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -12,13 +11,13 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class ReviewEngine {
+public class StaticReviewEngine {
 
     private final List<Analyzer> analyzers;
 
-    public List<Findings> review(CompilationUnit cu) {
+    public List<StaticFindings> review(CompilationUnit cu) {
 
-        List<Findings> findings = new ArrayList<>();
+        List<StaticFindings> findings = new ArrayList<>();
 
         for (Analyzer analyzer : analyzers) {
             findings.addAll(

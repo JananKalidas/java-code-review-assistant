@@ -1,7 +1,7 @@
 package org.javaparser.models;
 
 
-public record Findings (
+public record StaticFindings(
     Rule rule,
     Severity severity,
     String message
